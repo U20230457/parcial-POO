@@ -32,7 +32,7 @@ class Cliente extends Transporte{
     }
 
     anularVoleto(){
-        if (!this.estado){
+        if (this.estado == 'Reservado'){
             this.estado = 'disponible'
         }else{
             alert('El voleto no se puede anular')
@@ -47,10 +47,31 @@ const nuemeroVoleto = document.getElementById('numerovoleto')
 const precioVoleto = document.getElementById('precio')
 const estadoAsiento = document.getElementById('estado')
 const buttonVender = document.getElementById('button')
-
-
+const buttonAnular = document.getElementById('anular')
 
 nuemeroVoleto.innerHTML = `${transporte1.voleto}`
 precioVoleto.innerHTML = `${transporte1.precio}`
 estadoAsiento.innerHTML = `${transporte1.estado}`
 
+let cliente1 = new Cliente(nombre,dui,edad,telefono,voleto)
+
+buttonVender.addEventListener('click',()=>{
+    let nombre = document.getElementById("nombre").value
+    let dui = document.getElementById("dui").value
+    let edad = document.getElementById("edad").value
+    let telefono = document.getElementById("telefono").value
+    let voleto = document.getElementById("voleto").value
+    
+    
+    cliente1.venderVoleto(transporte1)
+    estadoAsiento.innerHTML=`${transporte1.Estado}`
+
+})
+
+buttonAnular.addEventListener('click',()=>{
+    let nombre = document.getElementById("nombre").value
+    
+    cliente1.anularVoleto()
+    estadoAsiento.innerHTML = `${transporte1.Estado}`
+    
+})

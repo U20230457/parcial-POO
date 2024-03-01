@@ -8,7 +8,7 @@ let edad = document.getElementById("edad").value
 let telefono = document.getElementById("telefono").value
 let voleto = document.getElementById("voleto").value
 
- function validarEdad(){
+function validarEdad(){
     let edad = document.getElementById("edad").value
     if (edad < 17) {
         alert`Losiento Nose Pueden hacer ventas a menores de edad`
