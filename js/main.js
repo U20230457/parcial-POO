@@ -14,3 +14,10 @@ let voleto = document.getElementById("voleto").value
         alert`Losiento Nose Pueden hacer ventas a menores de edad`
     }
 }
+
+    function calcularIva(precioBoleto) {
+        let iva = precioBoleto * 0.13;
+        let costoVoleteria = precioBoleto * 0.05;
+        let precioFinal = precioBoleto + iva + costoVoleteria;
+        return precioFinal; 
+}
